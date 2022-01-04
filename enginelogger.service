@@ -1,0 +1,14 @@
+[Unit]
+Description=engine logger service
+After=network.target
+
+[Service]
+ExecStart=/home/pi/.virtualenvs/serial/bin/python -u /home/pi/playground/engine_logger.py
+WorkingDirectory=/home/pi/playground
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
